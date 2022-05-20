@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// 부모로부터 받아온 어떤 데이터를 가지고 스타일링을 동적으로 할 것이라면?
 let StyledDeleteButton = styled.button`
   color: ${(props) => (props.user.username === 'ssar' ? 'blue' : 'red')};
+`;
+
+// 스타일 상속(StyledDeleteButton의 설정을 가져옴)
+let StyledAddButton = styled(StyledDeleteButton)`
+  // color: ${(props) => (props.user.username === 'ssar' ? 'blue' : 'red')};
+  background-color: green;
 `;
 
 // Function방식
@@ -13,6 +18,7 @@ const Home = (props) => {
 
   return (
     <div>
+      <StyledAddButton user={user}>더하기</StyledAddButton>
       <StyledDeleteButton user={user} onClick={() => setBoards([])}>
         전체삭제
       </StyledDeleteButton>
