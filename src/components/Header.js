@@ -1,4 +1,12 @@
 import React from 'react';
+import {
+  Button,
+  Container,
+  Form,
+  FormControl,
+  Nav,
+  Navbar,
+} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -18,19 +26,44 @@ const StyledHeaderLink = styled(Link)`
 
 const Header = () => {
   return (
-    <StyledHeaderDiv backgroundColor="blue">
-      <ul>
-        <li>
-          <StyledHeaderLink to="/">홈</StyledHeaderLink>
-        </li>
-        <li>
-          <StyledHeaderLink to="/login/10">로그인</StyledHeaderLink>
-        </li>
-        <li>
-          <StyledHeaderLink to="/join">회원가입</StyledHeaderLink>
-        </li>
-      </ul>
-    </StyledHeaderDiv>
+    <div>
+      <StyledHeaderDiv backgroundColor="blue">
+        <ul>
+          <li>
+            <StyledHeaderLink to="/">홈</StyledHeaderLink>
+          </li>
+          <li>
+            <StyledHeaderLink to="/login/10">로그인</StyledHeaderLink>
+          </li>
+          <li>
+            <StyledHeaderLink to="/join">회원가입</StyledHeaderLink>
+          </li>
+        </ul>
+      </StyledHeaderDiv>
+      <br />
+      <Navbar bg="light" variant="light">
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            <Link to="/" className="nav-link">
+              홈
+            </Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/login">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+          <Form className="d-flex">
+            <FormControl
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-primary">Search</Button>
+          </Form>
+        </Container>
+      </Navbar>
+    </div>
   );
 };
 
