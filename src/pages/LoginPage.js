@@ -1,14 +1,16 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import Login from '../components/login/Login';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
-      <Header />
+      <button onClick={() => navigate(-1)}>뒤로가기</button>
+      <button onClick={() => navigate('/join')}>회원가입</button>
+      <button onClick={() => navigate('/')}>홈</button>
       <Login />
-      <Footer />
     </div>
   );
 };

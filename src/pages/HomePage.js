@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import Home from '../components/home/Home';
 
 const HomePage = () => {
@@ -22,13 +20,7 @@ const HomePage = () => {
   }, []);
   // 부모가 자식에게 보내는 데이터를 props라고 함
 
-  return (
-    <div>
-      <Header />
-      <Home boards={boards} setBoards={setBoards} user={user} />
-      <Footer />
-    </div>
-  );
+  return <Home boards={boards} setBoards={setBoards} user={user} />;
 };
 
 export default HomePage;
